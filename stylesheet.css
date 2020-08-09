@@ -1,0 +1,474 @@
+@charset "utf-8";
+
+/* 初期設定
+--------------------------------------------------- */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;/*外側余白無し*/
+  padding: 0;/*内側余白無し*/
+  color: #000;/*文字色*/
+  background: #fff;/*背景色*/
+  font-family: "Helvetica Neue",/*フォント*/
+                Arial,
+                "Hiragino Kaku Gothic ProN",
+                "Hiragino Sans",
+                Meiryo,
+                sans-serif;
+}
+
+h1 {
+  font-size: 3.6rem;/*見出し文字サイズ*/
+}
+
+h2 {
+  font-size: 3.0rem;/*見出し文字サイズ*/
+  text-align: center;
+  margin: 0;
+  padding: 40px;
+}
+
+p li {
+  margin: 0;/*外側余白無し*/
+  padding: 0;/*内側余白無し*/
+  line-height: 1.5;/*行間*/
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+a:link {
+  color: #000;/*リンク色*/
+  text-decoration: none;/*下線を出さない*/
+}
+
+a:visited {
+  color: #808080;/*一度見たリンクの色*/
+}
+
+a:hover {
+  color: #ff4500;/*マウスオーバーの色*/
+}
+
+section, nav, header, main, footer {
+  display: block;/*ブロック要素に*/
+}
+
+/* ページ全体の設定
+--------------------------------------------------- */
+.wrapper {
+  display: flex;/*この要素の子要素を横並びに*/
+  width: 100%;/*大体のPCで見れる幅*/
+  flex-direction: column;/*上から順に並ぶ*/
+  
+  margin: 0 auto;
+}
+
+/*レスポンシブ対応
+--------------------------------------------------- */
+@media screen and (max-width: 559px) {/*560px未満*/
+  h1 {
+    font-size: 2.4rem;/* 24px*/
+  }
+  h2 {
+    font-size: 2.0rem;/* 20px*/
+  }
+}
+
+@media screen and (max-width: 959px) {/*960px未満*/
+  h1 {
+    font-size: 3.4rem;/* 36px*/
+  }
+  h2 {
+    font-size: 2.2rem;/* 24px*/
+  } 
+}
+
+/* ヘッダー
+--------------------------------------------------- */
+header {
+  width: 100%;
+  height: auto;
+  background: #fff;/*背景色*/
+  margin: 0 auto;
+  padding: 0;
+}
+
+.header {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  background: #fff;/*背景色*/
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  border-bottom: solid 1px rgb(175, 175, 175);
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+/* ロゴマーク
+--------------------------------------------------- */
+.logo {
+  width: 200px;
+  height: 75px;
+  margin: auto 0;
+  padding: 0 20px;
+  float: left;
+}
+
+.logo-mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  padding: 0;
+}
+
+/* ナビゲーション
+--------------------------------------------------- */
+.nav_area {
+  width: 940px;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.nav_area ul {
+  display: flex;
+  text-align: center;/*要素の中央寄せ*/
+  margin: 0;
+  padding: 0;
+}
+
+.nav_area li {
+  list-style-type: none;
+  flex-grow: 1;/*伸び率*/
+  padding: 30px;/*内側の余白*/
+}
+
+.nav_area a {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* スライダー
+--------------------------------------------------- */
+.single {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  bottom: 0;
+}
+.single img{
+  width: 100%;
+  height: 100vh;
+}
+
+/* メイン
+--------------------------------------------------- */
+main {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;/*背景色*/
+}
+
+/* NEWS
+--------------------------------------------------- */
+.news {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 80px;
+  background: #fff;/*背景色*/
+  border-bottom: solid 1px #fff;
+}
+
+.news ul {
+  width: 600px;
+  margin: 50px auto;
+  padding-left: 0;/*list左側の余白（●の分）をなくす*/
+}
+
+.news li {
+  list-style-type: none;
+  border-top: dashed 1.2px rgb(175, 175, 175); 
+}
+
+.news li:last-child {
+  border-bottom: dashed 1.2px rgb(175, 175, 175); 
+}
+
+/* ABOUT
+--------------------------------------------------- */
+.about {
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  margin: 0 auto;
+  padding-top: 80px;
+  background: #fff;/*背景色*/
+  z-index: 5;
+}
+
+.about h2 {
+  padding-bottom: 0;
+}
+
+.about-image {
+  width: 100%;
+  height: 700px;
+  margin: 0;
+  padding: 0;
+}
+
+.about-image img {
+  width: 100%;
+  height: 650px;
+}
+
+.about-content1 {
+  position: absolute;
+  width: 500px;
+  top: 200px;
+  left: 350px;
+  z-index: 8;
+}
+
+.about-content2 {
+  position: absolute;
+  width: 500px;
+  top: 420px;
+  left: 350px;
+  z-index: 8;
+}
+
+h3 {
+  font-size: 2.0rem;
+  text-align: center;
+  margin: 0;
+  padding: 30px 0 30px;
+  margin: 0;
+}
+
+.about p {
+  margin: auto;
+  margin-left: 40px;
+  padding: 10px 22px;
+}
+
+.about-content img {
+  width: 450px;
+  height: auto;
+  display: block;
+  margin: auto;
+  padding: 0;
+}
+
+/* MENU
+--------------------------------------------------- */
+.menu {
+  width: 100%;
+  height: 2000px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.menu h3 {
+  font-size: 2.5rem;
+}
+
+.menu-content {
+  width: 1150px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 20px;
+}
+
+.content {
+  width: 250px;
+  flex-grow: 1;/*伸び率*/
+}
+
+.content p {
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+h5 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 20px 0 0;
+  padding: 0;
+}
+
+.image {
+  width: 250px;
+  margin: auto;
+  padding: 0;
+}
+
+.image img {
+  width: 250px;
+  height: auto;
+}
+
+.topping-image img {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: auto;
+}
+
+.drink-content {
+  width: 500px; 
+  padding: 0 30px;
+  flex-grow: 1;/*伸び率*/
+}
+
+.drink-content p {
+  width: 500px;
+  font-weight: bolder;
+  border-bottom: solid 1px #000;
+}
+
+.drink-content td {
+  width: 160px;
+  font-size: 1.4rem;
+  padding: 15px 0;
+}
+
+.drink-type {
+  text-align: center;
+}
+
+.drink-price {
+  text-align: right;
+}
+
+/* STORE
+--------------------------------------------------- */
+.store {
+  width: 1200px;
+  height: 650px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.store-content {
+  width: 500px;
+  height: 400px;
+  float: left;
+  padding: 50px;
+  flex-grow: 1;/*伸び率*/
+}
+
+.store-content iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.store-content p {
+  padding: 5px;
+}
+
+.store-content span {
+  font-weight: bolder;
+}
+
+/* SHOP
+--------------------------------------------------- */
+.shop {
+  width: 1200px;;
+  height: 650px;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.shop p {
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.8rem;
+}
+
+/* CONTACT
+--------------------------------------------------- */
+.contact {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  padding-top: 80px;
+  background: #F5F5F5;
+}
+
+.contact span {
+  color: red;
+  font-weight: bolder;;
+}
+
+.contact-text {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  width: 600px;
+  margin: 20px auto;
+}
+
+.contact-table th {
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.submit {
+  width: 200px;
+  height: 40px;
+  color: #fff;
+  border-radius: 20px;
+  border: solid 1px #808080;
+  background: #808080;
+}
+
+.submit:hover {
+  border: solid 1px #555555;
+  background: #555555;
+}
+
+/* フッター
+--------------------------------------------------- */
+footer {
+  width: 100%;
+  height: 100px;
+  background: #fff;/*背景色*/
+  margin: 0 auto;
+  padding: 0;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  margin-top: 43.5px;
+}
+
+.copyright-text {
+  font-size: 1.2rem;
+}
